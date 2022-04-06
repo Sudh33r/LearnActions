@@ -9,7 +9,7 @@ jobs:
     container:
       image: ghcr.io/sudh33r/alpineatlassiansdk:latest
       credentials:
-        username: sudh33r
+        username: ${{secrets.GHCR_USER}}
         password: ${{secrets.GHCR_TOKEN}}
     steps:
       - name: step 1
