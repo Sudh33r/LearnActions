@@ -37,7 +37,7 @@ jobs:
           uses: docker/build-push-action@v2
           with:
              push: true
-             tags: sudheerforu/atlassiansdk:latest
+             tags: user/app:latest
   job2:
     name: second job
     runs-on: windows-latest
