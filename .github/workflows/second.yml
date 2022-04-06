@@ -1,0 +1,21 @@
+name: use docker image
+
+on: push
+
+jobs:
+  job1:
+    name: first job
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/sudh33r/alpineatlassiansdk:latest
+      credentials:
+        username: ${{ GIT_USER }}
+        password: ${{ GIT_TOKEN }}
+    steps:
+      - name: step 1
+        uses: actions/checkout@v2
+      - name: change to root user
+        run: sudo -i
+      - name: display atlas version
+        run: atlas-version
+       
