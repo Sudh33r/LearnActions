@@ -19,7 +19,7 @@ jobs:
         - name: step 3
           uses: rodrigo-nogues/github-action-install-atlassian-sdk@v1
         - name: step 4
-          run: java -cp java HelloWorldApp
+          run: atlas-version
   job2:
     name: second job
     runs-on: windows-latest
