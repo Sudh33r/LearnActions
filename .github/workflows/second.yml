@@ -10,7 +10,7 @@ jobs:
       image: ghcr.io/sudh33r/alpineatlassiansdk:latest
       credentials:
         username: sudh33r
-        password: ${{GIT_TOKEN}}
+        password: ${{GHCR_TOKEN}}
     steps:
       - name: step 1
         uses: actions/checkout@v2
