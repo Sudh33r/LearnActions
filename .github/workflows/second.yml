@@ -22,5 +22,5 @@ jobs:
           sudo -i
           uname -a
           cat /etc/os-release 
-  #        atlas-version
+          /bin/atlassian-plugin-sdk/bin/atlas-version
        
