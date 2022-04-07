@@ -5,10 +5,10 @@ on: push
 
 jobs:
   job1:
-    name: first job
+    name: Check atlassian sdk env
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/sudh33r/alpineatlassiansdk:latest
+      image: ghcr.io/sudh33r/alpineatlassiansdk:v1
       credentials:
         username: ${{secrets.GHCR_USER}}
         password: ${{secrets.GHCR_TOKEN}}
@@ -19,8 +19,9 @@ jobs:
         run: |
           pwd
           ls -lrt
-          sudo -i
           uname -a
-          cat /etc/os-release 
-          /bin/atlassian-plugin-sdk/bin/atlas-version
+          cat /etc/os-release
+          source ~/.profile
+          atlas-version
+          atlas-clean
        
