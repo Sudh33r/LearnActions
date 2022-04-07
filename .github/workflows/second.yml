@@ -23,5 +23,4 @@ jobs:
           cat /etc/os-release
           source /root/.profile
           atlas-version
-          atlas-clean
        
