@@ -1,6 +1,7 @@
 name: use docker image
 
-on: push
+on: 
+  workflow_dispatch:
 
 jobs:
   job1:
@@ -14,8 +15,8 @@ jobs:
     steps:
       - name: step 1
         uses: actions/checkout@v2
-      - name: change to root user
-        run: sudo -i
-      - name: display atlas version check
-        run: atlas-version
+      - name: change to root user and check atlas version
+        run: | 
+          sudo -i
+          atlas-version
        
