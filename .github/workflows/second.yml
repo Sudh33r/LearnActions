@@ -21,7 +21,7 @@ jobs:
           ls -lrt
           uname -a
           cat /etc/os-release
-          source ~/.profile
+          source /root/.profile
           atlas-version
           atlas-clean
        
