@@ -16,7 +16,9 @@ jobs:
       - name: step 1
         uses: actions/checkout@v2
       - name: change to root user and check atlas version
-        run: | 
+        run: |
+          node -v
+          cat /etc/os-release 
           sudo -i
           atlas-version
        
