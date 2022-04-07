@@ -16,6 +16,6 @@ jobs:
         uses: actions/checkout@v2
       - name: change to root user
         run: sudo -i
-      - name: display atlas version
+      - name: display atlas version check
         run: atlas-version
        
