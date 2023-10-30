@@ -1,0 +1,15 @@
+name: Summary of workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  summarize:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Write to workflow job summary
+      run: |
+        SUMMARY=$'# Testing Job Summary\n## Second Level Heading\nHello GitHub'
+        echo "$SUMMARY" >> $GITHUB_STEP_SUMMARY
