@@ -13,4 +13,8 @@ jobs:
       run: |
         SUMMARY=$'# Testing Job Summary\n## Second Level Heading\nHello GitHub'
         echo "$SUMMARY" >> $GITHUB_STEP_SUMMARY
-        echo "\ntesting" >> $GITHUB_STEP_SUMMARY
+        echo --- >> $GITHUB_STEP_SUMMARY
+        echo |key|repo|type| >> $GITHUB_STEP_SUMMARY
+        echo |---|---|---| >> $GITHUB_STEP_SUMMARY
+        echo |global|test|normal| >> $GITHUB_STEP_SUMMARY
+        echo "testing" >> $GITHUB_STEP_SUMMARY
