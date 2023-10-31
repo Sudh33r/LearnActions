@@ -3,6 +3,9 @@ name: Summary of workflow
 on:
   workflow_dispatch:
 
+env:
+  overallsummary: summary
+
 jobs:
   Job1:
 
@@ -25,7 +28,7 @@ jobs:
           echo "- Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
           echo "- Lets add a second bullet point" >> $GITHUB_STEP_SUMMARY
           echo "- How about a third one?" >> $GITHUB_STEP_SUMMARY
-  
+          echo $GITHUB_STEP_SUMMARY >> $overallsummary
   Job2:
 
     runs-on: ubuntu-latest
@@ -47,3 +50,12 @@ jobs:
           echo "- Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
           echo "- Lets add a second bullet point" >> $GITHUB_STEP_SUMMARY
           echo "- How about a third one?" >> $GITHUB_STEP_SUMMARY
+          echo $GITHUB_STEP_SUMMARY >> $overallsummary
+  job3:
+   needs : [Job1, Job2]
+   runs-on: ubuntu-latest
+   steps:
+   - name: summary collection
+     run: 
+       echo $overallsummary >> $GITHUB_STEP_SUMMARY
+   
